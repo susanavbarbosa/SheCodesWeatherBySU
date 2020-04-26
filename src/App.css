@@ -1,0 +1,17 @@
+body {
+  font-family: "Karma", serif;
+  font-size: 20px;
+  background: #ffffff;
+}
+div.card {
+  border-color: #596aca;
+  border-style: solid;
+  border-width: 4px;
+  padding: 10px 0px 100px 50px;
+  margin: 20px 400px 20px 400px;
+}
+footer {
+  text-align: center;
+  font-family: "Karma", serif;
+  font-size: small;
+}
