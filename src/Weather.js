@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import CompleteDate from "./CompleteDate";
 
 import "./App.css";
 import "./Weather.css";
@@ -15,6 +16,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
     });
@@ -49,20 +51,22 @@ export default function Weather(props) {
     return (
       <div className="card">
         <h2>{form}</h2>
-        <h4>Sunday, 15/03/2020, 16h41</h4>
+        <h4>
+          <CompleteDate date={weather.date} />
+        </h4>
         <div className="row">
-          <div class="col-4">
+          <div className="col-4">
             <div className="result">
               <img src={weather.icon} alt={weather.description} />
               <p>{Math.round(weather.temperature)}°C | F</p>
             </div>
-            <p>
+            <p className="text-capitalize">
               <span className="cityTbc">{city}</span>
             </p>
           </div>
           <div className="col-6">
             <ul>
-              <li>Sky: {weather.description}</li>
+              <li className="text-capitalize">Sky: {weather.description}</li>
               <li>Humidity: {weather.humidity}%</li>
               <li>Wind: {weather.wind}km/h</li>
               <li className="weather-advice">*wear sunscreen</li>
@@ -73,7 +77,7 @@ export default function Weather(props) {
         <div>
           <div className="container">
             <div className="row">
-              <div class="col-sm">
+              <div className="col-sm">
                 <div className="nextnamedays">Monday</div>
                 <p className="maxdegrees" id="dailyMaxTem">
                   22ºC
