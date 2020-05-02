@@ -36,6 +36,7 @@ export default function Weather(props) {
         className="city-search"
         type="Search"
         placeholder="Enter City Name"
+        autoFocus="on"
         onChange={updateCity}
       />
       <button type="Submit" className="search-button">
@@ -49,23 +50,23 @@ export default function Weather(props) {
       <div className="card">
         <h2>{form}</h2>
         <h4>Sunday, 15/03/2020, 16h41</h4>
-        <div className="container">
-          <div className="row">
-            <div class="col-sm">
-              <div className="result">
-                <p>
-                  <img src={weather.icon} alt={weather.description} />
-                </p>
-                {Math.round(weather.temperature)}°C | F<p></p>
-                <span className="cityTbc">{city}</span>
-              </div>
-              <ul>
-                <li>Sky: {weather.description}</li>
-                <li>Humidity: {weather.humidity}%</li>
-                <li>Wind: {weather.wind}km/h</li>
-                <li className="weather-advice">*wear sunscreen</li>
-              </ul>
+        <div className="row">
+          <div class="col-4">
+            <div className="result">
+              <img src={weather.icon} alt={weather.description} />
+              <p>{Math.round(weather.temperature)}°C | F</p>
             </div>
+            <p>
+              <span className="cityTbc">{city}</span>
+            </p>
+          </div>
+          <div className="col-6">
+            <ul>
+              <li>Sky: {weather.description}</li>
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Wind: {weather.wind}km/h</li>
+              <li className="weather-advice">*wear sunscreen</li>
+            </ul>
           </div>
         </div>
         <h5>Next:</h5>

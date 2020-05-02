@@ -12,6 +12,8 @@
 h4,
 .nextnamedays {
   color: #ff3467;
+  font-size: 25px;
+  text-align: left;
 }
 
 h5,
@@ -21,8 +23,9 @@ ul,
 }
 .cityTbc {
   font-weight: bold;
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px auto;
 }
 .weather-advice {
   font-style: italic;
@@ -34,8 +37,7 @@ ul,
   font-size: 30px;
   color: #596aca;
   font-weight: bold;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 20px auto;
 }
 hr {
   background: none;
@@ -49,11 +51,14 @@ li {
   list-style: none;
 }
 ul {
-  margin-left: 300px;
-  font-weight: bold;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  font-size: 25px;
+  margin-left: 20px;
   color: #5a6275;
 }
 h5,
 .nextnamedays {
   font-size: 25px;
+  padding: 20px auto;
 }
