@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CompleteDate from "./CompleteDate";
+import Forecast from "./Forecast";
 
 import "./App.css";
 import "./Weather.css";
@@ -11,15 +12,15 @@ export default function Weather(props) {
   let [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    setSelected(true);
     setWeather({
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      date: new Date(response.data.dt * 1000),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      date: new Date(response.data.dt * 1000),
     });
+    setSelected(true);
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -75,6 +76,9 @@ export default function Weather(props) {
         </div>
         <h5>Next:</h5>
         <div>
+          <div>
+            <Forecast />
+          </div>
           <div className="container">
             <div className="row">
               <div className="col-sm">
