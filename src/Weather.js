@@ -7,12 +7,13 @@ import "./App.css";
 import "./Weather.css";
 
 export default function Weather(props) {
-  let [city, setCity] = useState("");
-  let [selected, setSelected] = useState(false);
-  let [weather, setWeather] = useState({});
+  const [selected, setSelected] = useState(false);
+  const [weather, setWeather] = useState({});
+  const [city, setCity] = useState(props.defaultCity);
 
-  function displayWeather(response) {
+  function handleResponse(response) {
     setWeather({
+      city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -22,36 +23,38 @@ export default function Weather(props) {
     });
     setSelected(true);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
+  function search() {
     let apiKey = "393488bece3879e2bb4c2caa27c7b032";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeather);
+    axios.get(apiUrl).then(handleResponse);
   }
 
-  function updateCity(event) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
     setCity(event.target.value);
   }
-
-  let form = (
-    <form onSubmit={handleSubmit}>
-      <input
-        className="city-search"
-        type="Search"
-        placeholder="Enter City Name"
-        autoFocus="on"
-        onChange={updateCity}
-      />
-      <button type="Submit" className="search-button">
-        Search
-      </button>
-    </form>
-  );
 
   if (selected) {
     return (
       <div className="card">
-        <h2>{form}</h2>
+        <h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              className="city-search"
+              type="Search"
+              placeholder="Enter City Name"
+              autoFocus="on"
+              onChange={handleCityChange}
+            />
+            <button type="Submit" className="search-button">
+              Search
+            </button>
+          </form>
+        </h2>
         <h4>
           <CompleteDate date={weather.date} />
         </h4>
@@ -123,10 +126,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return (
-      <div className="card">
-        <h2>{form}</h2>
-      </div>
-    );
+    search();
+    return <div>Loading...</div>;
   }
 }
