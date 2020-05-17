@@ -24,8 +24,8 @@ ul,
 .cityTbc {
   font-weight: bold;
   font-size: 30px;
-  text-align: center;
-  padding: 20px auto;
+  padding: 25px auto;
+  margin-left: 40px;
 }
 .weather-advice {
   font-style: italic;
@@ -37,7 +37,8 @@ ul,
   font-size: 30px;
   color: #596aca;
   font-weight: bold;
-  padding: 20px auto;
+  padding: 25px auto;
+  margin-left: 40px;
 }
 hr {
   background: none;
