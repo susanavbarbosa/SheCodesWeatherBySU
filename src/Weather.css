@@ -22,6 +22,7 @@ ul,
   color: #5a6275;
 }
 .cityTbc {
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 30px;
   padding: 25px auto;

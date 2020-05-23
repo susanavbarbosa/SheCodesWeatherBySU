@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CompleteDate from "./CompleteDate";
+import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast";
 
 import "./App.css";
@@ -17,7 +18,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
     });
@@ -61,7 +62,7 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-4">
             <div className="result">
-              <img src={weather.icon} alt={weather.description} />
+              <WeatherIcon code={weather.icon} />
               <p>{Math.round(weather.temperature)}°C | F</p>
             </div>
             <p className="text-capitalize">
