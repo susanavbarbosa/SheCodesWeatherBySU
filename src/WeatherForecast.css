@@ -1,0 +1,15 @@
+.WeatherForecast {
+  text-align: center;
+  margin: 20px auto;
+  color: #5a6275;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.WeatherForecast .Hourly {
+  color: #ff3467;
+  font-size: large;
+}
+.WeatherForecast canvas {
+  display: block;
+  margin: 8px auto;
+  color: #5a6275;
+}

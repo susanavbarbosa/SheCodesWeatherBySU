@@ -84,50 +84,10 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <h5>Next:</h5>
+        <h5> What's Next:</h5>
         <div>
           <div>
-            <Forecast />
-          </div>
-          <div className="container">
-            <div className="row">
-              <div className="col-sm">
-                <div className="nextnamedays">Monday</div>
-                <p className="maxdegrees" id="dailyMaxTem">
-                  22ºC
-                </p>
-                <p className="mindegrees" id="dailyMinTem">
-                  10ºC
-                </p>
-              </div>
-              <div className="col-sm">
-                <div className="nextnamedays">Monday</div>
-                <p className="maxdegrees" id="dailyMaxTem">
-                  22ºC
-                </p>
-                <p className="mindegrees" id="dailyMinTem">
-                  10ºC
-                </p>
-              </div>
-              <div className="col-sm">
-                <div className="nextnamedays">Monday</div>
-                <p className="maxdegrees" id="dailyMaxTem">
-                  22ºC
-                </p>
-                <p className="mindegrees" id="dailyMinTem">
-                  10ºC
-                </p>
-              </div>
-              <div className="col-sm">
-                <div className="nextnamedays">Monday</div>
-                <p className="maxdegrees" id="dailyMaxTem">
-                  22ºC
-                </p>
-                <p className="mindegrees" id="dailyMinTem">
-                  10ºC
-                </p>
-              </div>
-            </div>
+            <Forecast city={weather.city} />
           </div>
         </div>
       </div>
