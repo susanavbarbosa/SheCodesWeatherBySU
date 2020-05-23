@@ -3,6 +3,7 @@ import axios from "axios";
 import CompleteDate from "./CompleteDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherAdvice from "./WeatherAdvice";
+import WeatherTemperature from "./WeatherTemperature";
 import Forecast from "./Forecast";
 
 import "./App.css";
@@ -64,7 +65,9 @@ export default function Weather(props) {
           <div className="col-4">
             <div className="result">
               <WeatherIcon code={weather.icon} />
-              <p>{Math.round(weather.temperature)}°C | F</p>
+              <p>
+                <WeatherTemperature celsius={weather.temperature} />
+              </p>
             </div>
             <p className="text-capitalize">
               <span className="cityTbc">{city}</span>
@@ -76,7 +79,7 @@ export default function Weather(props) {
               <li>Humidity: {weather.humidity}%</li>
               <li>Wind: {weather.wind}km/h</li>
               <li className="weather-advice">
-                <WeatherAdvice />
+                <WeatherAdvice code={weather.icon} />
               </li>
             </ul>
           </div>
