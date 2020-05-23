@@ -3,16 +3,19 @@
   border-radius: 5px;
   margin-bottom: 2px;
   border-color: #42a5f5;
+  margin-left: 40px;
 }
 .search-button {
   border-radius: 5px;
   margin-bottom: 2px;
   border-color: #42a5f5;
+  margin-left: 10px;
 }
 h4 {
   color: #ff3467;
   font-size: 25px;
   text-align: left;
+  margin-left: 40px;
 }
 
 ul,
@@ -61,7 +64,6 @@ ul {
 }
 h5 {
   font-size: 25px;
-  padding: 20px auto;
   margin-left: 40px;
   color: #5a6275;
 }
