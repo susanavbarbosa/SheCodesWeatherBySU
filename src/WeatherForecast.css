@@ -6,11 +6,10 @@
 }
 .WeatherForecast .hourly {
   color: #ff3467;
-  font-size: large;
+  font-weight: bold;
 }
 .WeatherForecast .degrees {
-  font-size: larger;
-  font-weight: 100;
+  font-weight: bold;
 }
 .WeatherForecast canvas {
   display: block;

@@ -17,17 +17,14 @@ h4 {
   text-align: left;
   margin-left: 40px;
 }
-
-ul,
-.cityTbc {
-  color: #596aca;
-}
 .cityTbc {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 30px;
-  padding: 25px auto;
+  padding: 20px auto;
+  text-align: center;
   margin-left: 40px;
+  color: #596aca;
 }
 .weather-advice {
   font-style: italic;
@@ -42,6 +39,7 @@ ul,
   font-weight: bold;
   padding: 25px auto;
   margin-left: 40px;
+  text-align: center;
 }
 hr {
   background: none;
@@ -63,7 +61,7 @@ ul {
   color: #5a6275;
 }
 h5 {
-  font-size: 25px;
   margin-left: 40px;
   color: #5a6275;
+  font-weight: bold;
 }

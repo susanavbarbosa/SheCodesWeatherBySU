@@ -15,7 +15,9 @@ export default function HourlyForecast(props) {
 
   return (
     <div className="col">
-      <div className="hourly">{hours()}</div>
+      <div className="hourly">
+        <bold>{hours()}</bold>
+      </div>
       <WeatherIcon code={props.data.weather[0].icon} />
       <div className="degrees">{temperature()}</div>
     </div>
