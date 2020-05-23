@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import CompleteDate from "./CompleteDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherAdvice from "./WeatherAdvice";
 import Forecast from "./Forecast";
 
 import "./App.css";
@@ -74,7 +75,9 @@ export default function Weather(props) {
               <li className="text-capitalize">Sky: {weather.description}</li>
               <li>Humidity: {weather.humidity}%</li>
               <li>Wind: {weather.wind}km/h</li>
-              <li className="weather-advice">*wear sunscreen</li>
+              <li className="weather-advice">
+                <WeatherAdvice />
+              </li>
             </ul>
           </div>
         </div>
